@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+{% include 'navbar.html' %}
 {% load static %}
 
 <head>
@@ -9,16 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiveSpaceSocial</title>
+
     <link rel="stylesheet" href="{% static 'base.css' %}">
 </head>
-<header>
-    {% include 'navbar.html' %}
-</header>
 
 <body>
-
+    {% block content %}
+    {% endblock content %}
 </body>
 
 </html>
-{% block content %}
-{% endblock content %}
