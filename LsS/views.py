@@ -36,11 +36,11 @@ def login_view(request):
             if users:
                 login(request, users)
                 return HttpResponseRedirect(
-                    request.GET.get("next", reverse("home"))
+                    request.GET.get("next", reverse("login"))
                 )
 
     form = LoginForm()
-    return render(request, "home.html", {"form": form})
+    return render(request, "login.html", {"form": form})
 
 
 @login_required
