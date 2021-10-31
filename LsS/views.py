@@ -50,7 +50,7 @@ def login_view(request):
             user = authenticate(request, username=data['username'], password=data['password'])
             if user:
                 login(request, user)
-                return HttpResponseRedirect(request.GET.get('next', reverse('home')))
+                return HttpResponseRedirect(request.GET.get('next', reverse('home.html')))
     form = LoginForm()
     return render(request, "login.html", {"form": form})
 

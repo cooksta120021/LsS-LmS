@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
-{% block content %}
-<form action="post">
-    {{form}}
-    <button type="submit">submit</button>
-    <a href="/register/">
-        <p>Create a new account</p>
-    </a>
-</form>
-{% endblock content %}
+<center>
+    {% block content %}
+    <form action="post">
+        {{form}}
+        <button type="submit">submit</button>
+        <a href="/register/">
+            <p>Create a new account</p>
+        </a>
+    </form>
+    {% endblock content %}
+</center>
