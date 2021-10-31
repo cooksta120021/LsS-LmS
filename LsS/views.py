@@ -42,14 +42,14 @@ def signup_view(request):
     return render(request, 'register.html', {'form': form})
 
 def login_view(request):
-    if request.method == "GET":
-        form = LoginForm(request.GET)
+    if request.method == "POST":
+        form = LoginForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
             user = authenticate(request, username=data['username'], password=data['password'])
             if user:
                 login(request, user)
-                return HttpResponseRedirect(request,'home.html')
+                return HttpResponseRedirect(request,'/')
     form = LoginForm()
     return render(request, "login.html", {"form": form})
 
