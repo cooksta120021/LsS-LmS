@@ -20,7 +20,6 @@ from LsS.forms import LoginForm, SignUp
 
 # Create your views here.
 
-@login_required
 def home(request):
     user = User.objects.all()
     return render(request, 'home.html', {'user':user})
