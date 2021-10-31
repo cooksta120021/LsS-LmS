@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 <center>
     {% block content %}
-    <form action="post">
-        {{form}}
-        <button type="submit">submit</button>
+    <form action="post" class="default" >
+        {{form.as_p}}
+        <button type="submit">Login</button>
         <a href="/register/">
             <p>Create a new account</p>
         </a>

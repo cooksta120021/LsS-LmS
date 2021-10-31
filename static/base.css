@@ -10,3 +10,8 @@
 a{
     color: rgb(138, 138, 138);
 }
+.default{
+    display: contents;
+    color: white;
+    background-color: white;
+}

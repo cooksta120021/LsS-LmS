@@ -6,7 +6,7 @@ from LsS.models import User
 
 
 class SignUp(forms.Form):
-    username = forms.CharField( max_length=140)
+    username = forms.CharField( max_length=50)
     password = forms.CharField(widget=forms.PasswordInput)
 
 
