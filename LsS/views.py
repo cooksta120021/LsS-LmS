@@ -20,7 +20,6 @@ from LsS.forms import LoginForm, ProfileUpdateForm, SignUp
 
 
 @login_required
-# home page
 def home_view(request):
     user = User.objects.all()
     return render(request, 'home.html', {'user':user})
@@ -32,12 +31,10 @@ def post(request):
     return render(request, 'home.html', context)
 
 
-# user profile
 def user_profile_view(request, id):
     user = User.objects.get(id=id)
     return render(request, 'user_detail.html', {'profile': user})
 
-# edit user profile
 def user_edit(request, id):
     user = User.objects.get(id=id)
     if request.method == 'POST':
@@ -50,7 +47,6 @@ def user_edit(request, id):
     form = ProfileUpdateForm()
     return render(request, 'edit_profile.html', {'form': form})
 
-#  register
 def signup_view(request):
     if request.method == 'POST':
         form = SignUp(request.POST)
@@ -66,7 +62,6 @@ def signup_view(request):
     form = SignUp()
     return render(request, 'register.html', {'form': form})
 
-# login
 def login_view(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
@@ -81,7 +76,6 @@ def login_view(request):
 
 
 @login_required
-# logout
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("home"))
