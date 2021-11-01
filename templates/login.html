@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
-<center>
-    {% block content %}
-    <form action="post" class="default" >
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Login</legend>
         {{form.as_p}}
-        <button type="submit">Login</button>
-        <a href="/register/">
-            <p>Create a new account</p>
-        </a>
-    </form>
-    {% endblock content %}
-</center>
+        <button type="submit" class="sub_but">Log In</button>
+    </fieldset>
+</form>
+<p>Need an account? <a href="/register/">Sign Up</a></p>
+{% endblock content %}
