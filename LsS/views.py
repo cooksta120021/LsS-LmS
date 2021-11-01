@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import (
     # permission_required, 
     # user_passes_test
     )
-from LsS.models import User
+from LsS.models import User, Post
 from django.shortcuts import (
     # HttpResponse, 
     HttpResponseRedirect, 
@@ -16,16 +16,41 @@ from django.shortcuts import (
     render, 
     reverse
 )
-from LsS.forms import LoginForm, SignUp
+from LsS.forms import LoginForm, ProfileUpdateForm, SignUp
 
-# Create your views here.
 
+@login_required
+# home page
 def home_view(request):
     user = User.objects.all()
     return render(request, 'home.html', {'user':user})
 
+@login_required
+def post(request):
+    context = {'post': Post.objects.all().order_by('-datetime'),
+               }
+    return render(request, 'home.html', context)
 
 
+# user profile
+def user_profile_view(request, id):
+    user = User.objects.get(id=id)
+    return render(request, 'user_detail.html', {'profile': user})
+
+# edit user profile
+def user_edit(request, id):
+    user = User.objects.get(id=id)
+    if request.method == 'POST':
+        form = ProfileUpdateForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            user.about = data['about']
+            user.save()
+            return render(request, 'user_detail.html')
+    form = ProfileUpdateForm()
+    return render(request, 'edit_profile.html', {'form': form})
+
+#  register
 def signup_view(request):
     if request.method == 'POST':
         form = SignUp(request.POST)
@@ -41,6 +66,7 @@ def signup_view(request):
     form = SignUp()
     return render(request, 'register.html', {'form': form})
 
+# login
 def login_view(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
@@ -55,6 +81,7 @@ def login_view(request):
 
 
 @login_required
+# logout
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("home"))

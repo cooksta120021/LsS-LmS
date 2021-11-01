@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include 'navbar.html' %}
 {% load static %}
+
 
 <head>
     <meta charset="UTF-8">
@@ -12,10 +12,20 @@
 
     <link rel="stylesheet" href="{% static 'base.css' %}">
 </head>
+<center>
+    <header class="header">{% include 'navbar.html' %}</header>
+</center>
 
 <body>
     {% block content %}
     {% endblock content %}
 </body>
+<footer>
+    <center>
+        <small>
+            <h6>created by: <b><u>John</u></b></h6>
+        </small>
+    </center>
+</footer>
 
 </html>

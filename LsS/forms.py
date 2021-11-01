@@ -1,5 +1,7 @@
 from django import forms
 from LsS.models import User
+from django.core.files.images import get_image_dimensions
+
 
 
 class SignUp(forms.Form):
@@ -15,4 +17,5 @@ class LoginForm(forms.Form):
 class ProfileUpdateForm(forms.Form):
     class Meta:
         model = User
-        fields = ['image', 'bio']
+        fields = ['bio']
+
