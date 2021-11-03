@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-mv1xr2*a=g4hfy11r_t_*gt%hgi#l67zl=br)%myk3mw@9qh2+
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'www.livespacesocial.com',
     'livespacesocial.com',
     '127.0.0.1',
     ]
@@ -126,10 +127,6 @@ USE_TZ = True
 LOGIN_URL = "/login/"
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-    ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
