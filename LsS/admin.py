@@ -1,5 +1,11 @@
 from django.contrib import admin
-from LsS.models import User
-# Register your models here.
+from .models import Post,Profilemodel
 
-admin.site.register(User)
+# Register your models here.
+@admin.register(Post)
+class post(admin.ModelAdmin):
+    list_display = ('id','user')
+
+@admin.register(Profilemodel)
+class Profile(admin.ModelAdmin):
+    list_display = ('id','user')

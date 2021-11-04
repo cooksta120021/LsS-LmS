@@ -1,21 +1,19 @@
 from django import forms
-from LsS.models import User
-from django.core.files.images import get_image_dimensions
+from django.forms import fields
+from LsS.models import Profilemodel
 
 
-
-class SignUp(forms.Form):
-    username = forms.CharField(max_length=50)
-    password = forms.CharField(widget=forms.PasswordInput)
+# class SignUp(forms.ModelForm):
+#     class Meta:
+#         model = Profilemodel
+#         fields = [
+#             'username','email','password'
+#             ]
 
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50)
     password = forms.CharField(widget=forms.PasswordInput)
 
-
-class ProfileUpdateForm(forms.Form):
-    class Meta:
-        model = User
-        fields = ['bio']
-
+class PostForm(forms.Form):
+    post = forms.CharField(max_length=140)

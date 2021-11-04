@@ -3,8 +3,17 @@
 <form method="post" class="default">
     {% csrf_token %}
     <fieldset>
-        <legend>Register</legend>
-        {{form.as_p}}
+        <div>
+            <form action="" method="POST" class="login-form">
+                {% csrf_token %}
+                <input type="email" name="email" class="email" placeholder="Email" aria-label="None" />
+                <input type="text" name="username" class="username" placeholder="Username" aria-label="None" />
+                <input type="text" name="fname" class="First Name" placeholder="First Name" aria-label="None" />
+                <input type="text" name="lname" class="Last Name" placeholder="Last Name" aria-label="None" />
+                <input type="password" name="password" class="password" placeholder="password here" aria-label="None" />
+                <button class="submit">Sign Up</button>
+            </form>
+        </div>
     </fieldset>
     <div>
         <button type="submit">Register</button>
