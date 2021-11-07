@@ -13,21 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from LsS import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("",views.index,name="home"),
-    path("register/",views.signup,name="register"),
-    path('profile/<int:id>/',views.profile,name="profile"),
-    path("edit_profile/",views.profile_upload,name="edit_profile"),
-    path("logout/",views.logout,name="logout"),
-    path("login/",views.login_view, name="login"),
-    path("post/<id>/",views.add_post,name="post"),
-    path("search/",views.search,name="search"),
-    path("follow-user",views.follow_user,name="follow")
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    path("admin/", admin.site.urls),
+    path("", views.index, name="home"),
+    path("register/", views.signup, name="register"),
+    path("profile/<int:id>/", views.profile, name="profile"),
+    path("edit_profile/", views.profile_upload, name="edit_profile"),
+    path("logout/", views.logout, name="logout"),
+    path("login/", views.login_view, name="login"),
+    path("post/", views.add_post, name="post"),
+    path("search/", views.search, name="search"),
+    path("follow-user", views.follow_user, name="follow"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
