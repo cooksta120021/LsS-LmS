@@ -1,22 +1,19 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
-class Profilemodel(models.Model):
-    image = models.ImageField(upload_to="ProfilePics")
+class Profilemodel(AbstractUser):
+    # image = models.ImageField(upload_to="ProfilePics")
     bio = models.CharField(max_length=200)
     followers = models.ManyToManyField(
-        User, related_name="followers", blank=True, null=True
+        'self', related_name="followers", blank=True, null=True
     )
-    following = models.ManyToManyField(User, blank=True, null=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="user")
+    following = models.ManyToManyField('self', blank=True, null=True)
 
 
 class Post(models.Model):
     text = models.CharField(max_length=140)
-    post = models.ImageField(upload_to="posts")
     profileuser = models.ForeignKey(
         Profilemodel, related_name="profile", on_delete=models.CASCADE
     )
-    likes = models.ManyToManyField(User, related_name="likes", blank=True, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default="user")
+    likes = models.ManyToManyField('self', related_name="likes", blank=True, null=True)

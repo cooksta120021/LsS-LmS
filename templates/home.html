@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    div.post{
+        display: content;
+        max-width: fit-content;
+        background-color: grey;
+        color: white;
+    }
+</style>
 <center>
     <h1 class="default">LiveSpaceSocial</h1>
 </center>
+{% for post in posts %}
+<div class='post'>
+    <h6>{{post.profileuser}}</h6>
+    <h3>{{post.text}}</h3>
+</div>
+
+{% endfor %}
 <h4>The place that matters.</h4>
 {% endblock content %}

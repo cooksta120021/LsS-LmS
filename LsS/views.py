@@ -2,20 +2,27 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http.response import HttpResponse
-from django.shortcuts import HttpResponseRedirect, redirect, render, reverse
-
+from django.shortcuts import (
+    HttpResponseRedirect,
+    redirect,
+    render,
+    reverse
+    
+    )
 from LsS.models import Post, Profilemodel
-
-from .forms import LoginForm, PostForm
+from LsS.forms import LoginForm, PostForm
 
 """Showing Posts here"""
 
 
 def index(request):
     if request.user.is_authenticated:
-        post = Post.objects.filter(profileuser__followers=request.user)
+        user = Profilemodel.objects.get(id=request.user.id)
+        user.following.add(user)
+        following = user.following.all()
+        post = Post.objects.filter(profileuser__in=following)
 
-        return render(request, "home.html", {"post": post})
+        return render(request, "home.html", {"posts": post})
     else:
         return redirect("register")
 
@@ -45,9 +52,8 @@ def profile_upload(request):
 
 def profile(request, id):
     if request.user.is_authenticated:
-        profile = User.objects.get(id=id)
-        posts = Post.objects.filter(user=profile)
-        print(posts)
+        profile = Profilemodel.objects.get(id=id)
+        posts = Post.objects.filter(profileuser=profile)
         return render(request, "profile.html", {"profile": profile, "posts": posts})
     else:
         return redirect("/register/")
@@ -63,11 +69,11 @@ def signup(request):
         fname = request.POST["fname"]
         lname = request.POST["lname"]
         password = request.POST["password"]
-        if User.objects.filter(username=username).first():
+        if Profilemodel.objects.filter(username=username).first():
             messages.warning(request, "Username already exists")
             return redirect("register")
         else:
-            a = User.objects.create_user(username, email, password)
+            a = Profilemodel.objects.create_user(username, email, password)
             a.first_name = fname
             a.last_name = lname
             a.save()
@@ -125,46 +131,30 @@ def login_view(request):
 
 
 # @login_required
-# def add_post(request):
-#     if request.method == 'POST':
-#         form = PostForm(request.POST)
-#         if form.is_valid():
-#             data = form.cleaned_data
-#             Post.objects.create(
-#                 text=data['text'],
-#                 name=request.user,
-#             )
-#             pattern = re.compile(r'@(\w{1,15})')
-#             pattern_matches = pattern.findall(data['text'])
-#             if pattern_matches:
-#                 for string in pattern_matches:
-#                      User.objects.get(username=string)
-
-                    # users_mentioned = NewUser.objects.filter(username__in=pattern_matches)
-                    # for person in users_mentioned:
-                    #     if person.username in pattern_matches:
-                    # print(person.username, type(person))
-                    # notification = Notification.objects.create(
-                    #     reciever=name,
-                    #     sender=request.user,
-                    #     post=tweets,
-                    # )
-    #             return redirect('/')
-    # form = PostForm()
-    # return render(request, 'post.html', {'form': form})
-
-
-
-
-def add_post(request, id):
-    if request.user.is_authenticated:
-        if request.method == "POST":
-            profile = Profilemodel.objects.get(id=id)
-            # postdesc = request.POST["desc"]
-            file = request.FILES["file"]
-            Post.objects.create(
-                post=file, user=profile
+def add_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            post = Post.objects.create(
+                text=data['post'],
+                profileuser=request.user
             )
-        return render(request, "post.html")
-    else:
-        return redirect("register")
+        return redirect('/')
+    form = PostForm()
+    return render(request, 'post.html', {'form': form})
+
+
+# def add_post(request):
+#     if request.user.is_authenticated:
+#         if request.method == "POST":
+#             id = request.user.id
+#             profile = Profilemodel.objects.get(id=id)
+#             # postdesc = request.POST["desc"]
+#             # file = request.FILES["file"]
+#             Post.objects.create(
+#                 post=post, user=profile
+#             )
+#         return render(request, "post.html")
+#     else:
+#         return redirect("register")
