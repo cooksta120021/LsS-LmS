@@ -4,10 +4,6 @@
 <div class="container">
     {% if user.is_authenticated %}
     <h3>Welcome {{request.user}}</h3>
-    <h2></h2>
-   
-    {{notes}}
-    <p><button><a href="/addtweet/">Say something</a></button></p>
     {% for tweet in tweets %}
     <br>
     <div class="card">

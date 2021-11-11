@@ -1,54 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<center>
-    {% include 'navbar.html' %}
-</center>
-
+{% include 'navbar.html' %}
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiveSpaceSocial</title>
-    <!-- {% load static %}
-    <link rel="stylesheet" href="{% static 'main.css' %}"> -->
+    <title>#️⃣Twitter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
     <!-- <img class="tcb" src="media\Twitter-clone.png" alt="twitterclone"> -->
 </head>
-<style>
-    :root {
-        background-color: black;
-        color: white;
-    }
-    
-    h3 {
-        background-color: black;
-        color: rgb(0, 224, 11);
-    }
-    
-    h4 {
-        background-color: black;
-        color: rgb(21, 182, 0);
-    }
-    
-    .card-header{
-        
-        background-color: gray;
-        color: black;
-    }
-    
-    .card-body{
-    
-        background-color: white;
-        color: black;
-    }
-    
-    .card-text{
-        color: black;
-    }
-    
-</style>
+
 <body>
-    
+    {% if user.is_authenticated %}
+    <h2></h2>
+   
+    {{notes}}
+    <p><button><a href="/addtweet/">Say something</a></button></p>
+    {% endif %}
     <br>
     {% block content %}
     
