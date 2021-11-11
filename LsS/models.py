@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+
+
 # Create your models here.
 class Profilemodel(AbstractUser):
-    # image = models.ImageField(upload_to="ProfilePics")
+    image = models.ImageField(upload_to="ProfilePics", default='media/ProfilePics/thumb_15951118880user.png')
     bio = models.CharField(max_length=200)
     followers = models.ManyToManyField(
         'self', related_name="followers", blank=True, null=True
