@@ -1,50 +1,35 @@
 {% extends 'base.html' %}
-
 {% block content %}
-{% if messages %}
- {% for message in messages %}
-   <div class="alert alert-success alert-dismissible fade show" role="alert">
-<strong>SUCCESS</strong> {{message}}
-<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
- {% endfor %}
- {% endif %}
- <div class="user">
-   <div class="user-image">
-     <img src="{{profile.image.url}}" alt="" />
-     <h6></h6>
-   </div>
-   <div class="user-followers-following">
-     <div class="user-posts">
-       <h3 class="posts-number">{{posts.count}}</h3>
-       <h3 class="user-posts">Posts</h3>
-     </div>
-     <div class="user-followers">
-       <h3 class="followers-number">{{profile.followers.count}}</h3>
-       <h3 class="user-followers">Followers</h3>
-     </div>
-     <div class="user-followings">
-       <h3 class="following-numbers">{{profile.following.count}}</h3>
-       <h3 class="user-following">Following</h3>
-     </div>
-   </div>
- </div>
- <div class="posts">
-   <!--  -->
-   {% for post in profileuser.posts %}
-         <div class="user-post">
-     <div class="post-image">
-       <img src="{{post.post.url}}" alt="" />
-     </div>
-     <div class="posts-comments-like">
-       <a href="" id="like">&#x02665;</a>
-       <a href="">Comments</a>
-     </div>
-   </div>
-   {% endfor %}
+{% if user.is_authenticated %}
 
-   <!--  -->
-   
-   </div>
- </div>
+<head>{{user.username}}</head>
+<div class="container">
+    <div class="col-sm-2">
+        <br>
+        <h3>{{tweet.name}} <small><small><small>
+                        <br>
+                        <button style="color: rgb(50, 207, 58); background-color: red ;">following
+                            {{following.count}}</button>
+                    </small></small></small> </h3>
+    </div>
+    <br><br>
+    <div class="card">
+        <div class="card-body">
+            {{profile.bio}} <br>
+            <small>
+                <small>
+                    <small>
+                        <small>number of Tweets I made: </small>
+                    </small>
+                </small>
+            </small># {{tweets.count}}<br>
+        </div>
+        {% for tweet in tweet.name %}
+        {{tweet.text}}<br>
+        <p>other tweets from this user</p>
+        {{text.id}}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 {% endblock content %}

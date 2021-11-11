@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+<center>
+    {% include 'navbar.html' %}
+</center>
 
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiveSpaceSocial</title>
+    <!-- {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}"> -->
+    <!-- <img class="tcb" src="media\Twitter-clone.png" alt="twitterclone"> -->
 </head>
 <style>
-    header {
-        background-color: blueviolet;
-        border: 10px double white;
-        max-width: fit-content;
+    :root {
+        background-color: black;
+        color: white;
     }
-
-    a {
+    
+    h3 {
+        background-color: black;
+        color: rgb(0, 224, 11);
+    }
+    
+    h4 {
+        background-color: black;
+        color: rgb(21, 182, 0);
+    }
+    
+    .card-header{
+        
+        background-color: gray;
         color: black;
     }
+    
+    .card-body{
+    
+        background-color: white;
+        color: black;
+    }
+    
+    .card-text{
+        color: black;
+    }
+    
 </style>
-<center>
-    <header class="header">{% include 'navbar.html' %}</header>
-</center>
-
 <body>
+    
+    <br>
     {% block content %}
+    
     {% endblock content %}
 </body>
-<footer>
-    <center>
-        <small>
-            <h6>created by: <b><u>RockWaveRadio</u></b></h6>
-        </small>
-    </center>
-</footer>
 
 </html>

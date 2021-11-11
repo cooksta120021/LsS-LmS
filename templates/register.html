@@ -1,23 +1,41 @@
-{% extends 'base.html' %}
-{% block content %}
-<form method="post" class="default">
-    {% csrf_token %}
-    <fieldset>
-        <div>
-            <form action="" method="POST" class="login-form">
-                {% csrf_token %}
-                <input type="email" name="email" class="email" placeholder="Email" aria-label="None" />
-                <input type="text" name="username" class="username" placeholder="Username" aria-label="None" />
-                <input type="text" name="fname" class="First Name" placeholder="First Name" aria-label="None" />
-                <input type="text" name="lname" class="Last Name" placeholder="Last Name" aria-label="None" />
-                <input type="password" name="password" class="password" placeholder="password here" aria-label="None" />
-                <button class="submit">Sign Up</button>
-            </form>
-        </div>
-    </fieldset>
-    <div>
-        <button type="submit">Register</button>
+<!DOCTYPE html>
+<html lang="en">
+{% include 'navbar.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#️⃣TWITTER</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
+    <br><br><br><br><br>
+    <h2 align="center" style="color: blue;">Twitter Clone</h2>
+    <br><br>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend>Login</legend>
+                {{form.as_p}}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+            </div>
+
+            <a href='/login/'>
+                <p>Login, I already have an account.</p>
+            </a>
+        </form>
     </div>
-    <p>Already have an account?</p><a href='/login/'>Login</a>
-</form>
-{% endblock content %}
+    {% if messages %}
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    {% endif %}
+</body>
+
+</html>

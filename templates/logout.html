@@ -2,7 +2,6 @@
 <html lang="en">
 {% include 'navbar.html' %}
 
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,20 +16,8 @@
     <h2 align="center" style="color: blue;">Twitter Clone</h2>
     <br><br>
     <div class="container">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend>Login</legend>
-                {{form}}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Login</button>
-            </div>
-
-            <a href="/register/">
-                <p>Create a new account</p>
-            </a>
-        </form>
+        <h4>Logged Out!!</h4>
+        <a href="{% url 'login' %}">Login</a>
     </div>
 </body>
 
