@@ -33,6 +33,7 @@ def index(request):
 def profile_upload(request):
     if request.user.is_authenticated:
         if request.method == "POST":
+            user = Profilemodel.objects.get(id=request.user.id)
             user_bio = request.POST["bio"]
             profile_pic = request.FILES["file"]
             Profilemodel.objects.create(
@@ -136,7 +137,7 @@ def add_post(request):
         form = PostForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            post = Post.objects.create(
+            Post.objects.create(
                 text=data['post'],
                 profileuser=request.user
             )
