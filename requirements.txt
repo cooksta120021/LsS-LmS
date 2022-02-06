@@ -1,24 +1,65 @@
 asgiref @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/71/66/fe/0268717622fd9cf036d2fb46b7ad84ad39e3776bc461ce21a4284f32d2/asgiref-3.5.0-py3-none-any.whl
-black @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/ae/2f/9c/7e40c36332a000833cd9959bd2e2d9f896fca0b78e8bdcfafc75e5daaa/black-21.10b0-py3-none-any.whl
-certifi @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/89/06/5b/e4bfdf1b8370bdc0a26198e81afa98f68c01a8b1b515c9108c6ad98d8a/certifi-2021.10.8-py2.py3-none-any.whl
-charset-normalizer @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/58/c0/29/4486c2c32ae84185484069827004d015069c11c9f4b8a65326f8c54ce8/charset_normalizer-2.0.7-py3-none-any.whl
-click @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/fa/59/1c/2eaf2b8f82cecf1e8d2d6dba67bd01214cf590d308bd9c917aa19c3eda/click-8.0.3-py3-none-any.whl
-colorama @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/74/2e/50/75ba669a143dfc6521a6899c6d20424a19242688cff8fc8eac2cb9979c/colorama-0.4.4-py2.py3-none-any.whl
-Django @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/bd/91/83/4ff0790fddbe5ea1ba32555ea161d9e772b0c5a26d233e3cb7691017c9/Django-4.0.2-py3-none-any.whl
+autopep8==1.6.0
+backports.entry-points-selectable==1.1.0
+black==21.10b0
+CacheControl==0.12.10
+cachy==0.3.0
+certifi==2021.10.8
+charset-normalizer==2.0.7
+cleo==0.8.1
+click==8.0.3
+clikit==0.6.2
+colorama==0.4.4
+crashtest==0.3.1
+distlib==0.3.3
+dj-database-url==0.5.0
+Django==4.0.2
+django-heroku==0.3.1
+djangorestframework==3.12.4
+environ==1.0
+filelock==3.3.2
+flake8==4.0.1
 gunicorn==20.1.0
-idna @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/90/36/8c/81eabf6ac88608721ab27f439c9a6b9a8e6a21cc58c59ebb1a42720199/idna-3.3-py3-none-any.whl
-mypy-extensions @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/2f/c6/09/3e1afdcb75322c65b786e63cd7e879b6be3db36dea78ca376db5483ae4/mypy_extensions-0.4.3-py2.py3-none-any.whl
+html5lib==1.1
+idna==3.3
+ischedule==1.2.2
+keyring==21.8.0
+lockfile==0.12.2
+mccabe==0.6.1
+msgpack==1.0.2
+mypy-extensions==0.4.3
 optional-django @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/de/dd/79/4067df49f22dba8ea79ddf93e5e7c855855d8b1bd07e8f489e50d2c164/optional-django-0.3.0.tar.gz
-pathspec @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/48/a0/9f/f5128d9e11d591bca7a942dd80ec44f9b2de8294775c68e0b99beeef93/pathspec-0.9.0-py2.py3-none-any.whl
-Pillow @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/8e/47/ef/0b7d35f0dbca60fe6122b603f551d5d9c78a336918abaf8e0e85fc5e98/Pillow-8.4.0-cp310-cp310-win_amd64.whl
-platformdirs @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/91/6e/9f/f7d376fea37fd99fcb013a4c4c35baa27fbbd2950be85df91718d8dbb6/platformdirs-2.4.0-py3-none-any.whl
-pytz @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/a0/f8/66/b50e6d372fa21e4d6db4b2fe5c5e94aaf59b82d02a7b3215fbc4fae889/pytz-2021.3-py2.py3-none-any.whl
+packaging==20.9
+pastel==0.2.1
+pathspec==0.9.0
+pexpect==4.8.0
+Pillow==8.4.0
+pkginfo==1.7.1
+platformdirs==2.4.0
+poetry==1.1.11
+poetry-core==1.0.7
+psycopg2==2.9.3
+ptyprocess==0.7.0
+pycodestyle==2.8.0
+pyflakes==2.4.0
+pylev==1.4.0
+pyparsing==3.0.4
+pytz==2021.3
+pywin32-ctypes==0.2.0
 react @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/a7/22/d5/a88070fea77afc0241111b8a11425b653780718833ddf294694b44cff9/react-4.3.0.tar.gz
-regex @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/68/95/1e/1146ce3c15e6b58145fc1686aff21639ac76d01760d8d5ac9cd5633566/regex-2021.11.2-cp310-cp310-win_amd64.whl
-requests @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/6a/b9/48/6be0d05d410682cd0b78969d6915808ff19194523f8b3c385de86b91e5/requests-2.26.0-py2.py3-none-any.whl
-sqlparse @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/10/f5/22/c9c991a71e27c4d8f69907d92cce74a369cbb3183dc4a6d27e2ae4ab0b/sqlparse-0.4.2-py3-none-any.whl
-tomli @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/cd/cb/e7/0d9ac9a175a911ced8c299ad17a82baea5383d8e7f2671f02dd88f3180/tomli-1.2.2-py3-none-any.whl
-typing-extensions @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/38/75/97/6eab0f8cf101fef6fcb6978ef5d687077ee0a765f42166ef4a733d2f1a/typing_extensions-3.10.0.2-py3-none-any.whl
-tzdata @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/d4/fd/1a/a134a4412e45ee193e3656b19fd3218840e258a976cdd2ab91dd105a06/tzdata-2021.5-py2.py3-none-any.whl
-urllib3 @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/02/f2/71/677092d701b05b3002d926889fe56877b1d688548437c1b7fe72ab4397/urllib3-1.26.7-py2.py3-none-any.whl
-whitenoise @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/12/cf/d0/5982150a72e04e63fd7c59bcbbcccd2d787341bbe850e6324ece12cf53/whitenoise-5.3.0-py2.py3-none-any.whl
+regex==2021.11.2
+requests==2.26.0
+requests-toolbelt==0.9.1
+schedule==1.1.0
+shellingham==1.4.0
+six==1.16.0
+sqlparse==0.4.2
+toml==0.10.2
+tomli==1.2.2
+tomlkit==0.7.2
+typing-extensions==3.10.0.2
+tzdata==2021.5
+urllib3==1.26.7
+virtualenv==20.10.0
+webencodings==0.5.1
+whitenoise==5.3.0
