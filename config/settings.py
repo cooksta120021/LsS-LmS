@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-aipv6e6$*n5yt=h_+473yz01_+x(nhpfdaa14u9as@1#053rlu
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    'https://git.heroku.com/https://git.heroku.com/live-space-social.git',
+    'https://live-space-social.herokuapp.com/',
+    '127.0.0.1',
+    'localhost'
 ]
 
 
