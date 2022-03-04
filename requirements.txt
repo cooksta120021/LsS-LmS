@@ -5,7 +5,7 @@
 # click @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/fa/59/1c/2eaf2b8f82cecf1e8d2d6dba67bd01214cf590d308bd9c917aa19c3eda/click-8.0.3-py3-none-any.whl
 # colorama @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/74/2e/50/75ba669a143dfc6521a6899c6d20424a19242688cff8fc8eac2cb9979c/colorama-0.4.4-py2.py3-none-any.whl
 # Django @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/bd/91/83/4ff0790fddbe5ea1ba32555ea161d9e772b0c5a26d233e3cb7691017c9/Django-4.0.2-py3-none-any.whl
-# gunicorn==20.1.0
+gunicorn==20.1.0
 # idna @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/90/36/8c/81eabf6ac88608721ab27f439c9a6b9a8e6a21cc58c59ebb1a42720199/idna-3.3-py3-none-any.whl
 # mypy-extensions @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/2f/c6/09/3e1afdcb75322c65b786e63cd7e879b6be3db36dea78ca376db5483ae4/mypy_extensions-0.4.3-py2.py3-none-any.whl
 # optional-django @ file:///C:/Users/cooks/AppData/Local/pypoetry/Cache/artifacts/de/dd/79/4067df49f22dba8ea79ddf93e5e7c855855d8b1bd07e8f489e50d2c164/optional-django-0.3.0.tar.gz
