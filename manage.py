@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+from os import abspath, dirname
+
+CURRENT_DIRECTORY = dirname(abspath(__file__))
+
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
