@@ -1,0 +1,11 @@
+https://docs.djangoproject.com/en/3.2/topics/signals/
+https://www.youtube.com/watch?v=RKG-Bd8Xjwk&t=365s&ab_channel=LaraCode
+
+helped with this project:
+Joey
+Marcus
+Study Hall,
+Ashley Mckenzie,
+Occie,
+Cassandra,
+Zachary Balaska,

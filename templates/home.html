@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="container">
+    {% if user.is_authenticated %}
+    <h3>Welcome {{request.user}}</h3>
+    {% for tweet in tweets %}
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <a href="/user/{{tweet.name.id}}/">
+                <h4>{{tweet.name}} <br>
+                    <a href="/follow/{{tweet.name.id}}/">Follow</a>
+                    <a href="/unfollow/{{tweet.name.id}}/">Stop following</a>
+                </h4>
+            </a>
+            <p>{{tweet.text}}</p>
+            <p><a href="/singletweet/{{tweet.id}}/">view tweet</a> <br>
+                <a href="/delete/{{tweet.id}}">Delete</a>
+            </p>
+            <p>
+            </p>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+            <h6>{{tweet.datetime}}</h6>
+            </p>
+        </div>
+        {% endfor %}
+        {% else %}
+        <a href="/login/">Click here to continue!!!</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

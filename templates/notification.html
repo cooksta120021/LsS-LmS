@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for notification in notifications_to_render %}
+
+{{notification.sender}} : {{notification.post.text}} 
+
+{% endfor %}
+{% endblock content %}
