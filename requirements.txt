@@ -29,7 +29,7 @@ gunicorn==20.1.0
 html5lib==1.1
 idna==3.3
 ipykernel==6.9.1
-ipython==8.0.1
+ipython==8.10.0
 ischedule==1.2.2
 jedi==0.18.1
 jupyter-client==7.1.2
